@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons  *ngIf="!note.id" slot="end">
+      <ion-button [disabled]="disabled" (click)="addNote()">
+        <ion-icon name="save-outline" size="small"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons  *ngIf="note.id" slot="end">
+      <ion-button (click)="updateNote()">
+        <ion-icon name="save-outline" size="small"></ion-icon>
+      </ion-button>
+      <ion-button (click)="deleteNote()">
+        <ion-icon name="trash-outline" size="small"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item  lines="full">
+    <ion-label position="floating">Başlık</ion-label>
+    <ion-input [(ngModel)] = "note.title"></ion-input>
+  </ion-item>
+  <ion-item  lines="full">
+    <ion-label position="stacked">Not</ion-label>
+    <ion-textarea  #inpNote (input)="inputChange(inpNote.value)" [(ngModel)] = "note.notes" rows="15"></ion-textarea>
+  </ion-item>
+</ion-content>

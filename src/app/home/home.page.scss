@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.date {
+  width: 65px;
+  font-size: 12px;
+  padding: 0;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-label h4{
+  font-weight: bold;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+ion-label p{
+  font-size: 12px;
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+ion-buttons {
+  padding: 0;
+  margin: 0;
 }
